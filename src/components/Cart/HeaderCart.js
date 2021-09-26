@@ -1,6 +1,6 @@
-const HeaderCart = () => {
+const HeaderCart = (props) => {
     return (
-        <button>
+        <button onClick={props.onShowCart}>
             <span>--cart icon--</span>
             <span>Cart</span>
             <span>--count--</span>
