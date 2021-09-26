@@ -7,7 +7,7 @@ const Header = () => {
     return (
         <Fragment>
             <header>
-                <h1>The Shop!</h1>
+                <h1>The Shop</h1>
                 <HeaderCart />
             </header>
             <div>
