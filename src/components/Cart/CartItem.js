@@ -4,8 +4,8 @@ const CartItem = (props) => {
             <div>{props.itemName}</div>
             <div>x {props.quantity}</div>
             <div>Price: {props.price} EUR</div>
-            <button>Remove</button>
-            <button>Add</button>
+            <button onClick={props.onRemove}>Remove</button>
+            <button onClick={props.onAdd}>Add</button>
         </li>
     );
 }
