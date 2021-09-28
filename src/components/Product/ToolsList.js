@@ -38,7 +38,8 @@ const DUMMY_TOOLS = [
 const ToolsList = () => {
     const tools = DUMMY_TOOLS.map(tool => (
       <Tools 
-        key={tool.id} 
+        key={tool.id}
+        id={tool.id} 
         title={tool.description} 
         price={tool.price}
       />

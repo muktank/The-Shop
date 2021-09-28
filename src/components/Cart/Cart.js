@@ -1,19 +1,15 @@
+import { useContext } from "react";
+
 import CartItem from "./CartItem";
 import Modal from "../Generic/Modal";
-
-const CART_ITEMS = [
-    {
-        id: "001",
-        product_id: "A101",
-        name: "Screwdriver",
-        quantity: "3",
-        total_price: "234"
-    }
-];
+import CartContext from "../../store/cartCtx";
 
 const Cart = (props) => {
-    const items = CART_ITEMS.map((item) => (
-        <CartItem itemName={item.name} quantity={item.quantity} />
+    const cartCtx = useContext(CartContext);
+    const isEmpty = cartCtx.items.length === 0;
+
+    const items = cartCtx.items.map((item) => (
+        <CartItem key= {item.id} itemName={item.title} price={item.price} quantity={item.quantity} />
     ));
 
     const onCheckout = () => {
@@ -24,9 +20,9 @@ const Cart = (props) => {
     return (
         <Modal onHideCart={props.onHideCart}>
             <ul>{items}</ul>
-            <div>Cart Total : 345 EUR</div>
+            <div>Cart Total : {cartCtx.totalPrice} EUR</div>
             <button onClick={props.onHideCart}>Close</button>
-            <button onClick={onCheckout}>Checkout</button>
+            {!isEmpty && <button onClick={onCheckout}>Checkout</button>}
         </Modal>
     );
 };
