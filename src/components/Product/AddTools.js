@@ -1,5 +1,7 @@
 import { useRef } from "react";
 
+import "../../styles/AddTools.css"
+
 const AddTools = (props) => {
     const inputRef = useRef();
     let id = `input-${props.inputId}`;
@@ -15,8 +17,8 @@ const AddTools = (props) => {
     };
 
     return (
-        <form onSubmit={submitHandler}>
-            <label htmlFor={id}>Quantity</label>
+        <form className="form" onSubmit={submitHandler}>
+            <label htmlFor={id}>Quantity:</label>
             <input ref={inputRef} id={id} type="number" min="1" max="5" step="1" defaultValue="1"/>
             <button>Add To Cart</button>
         </form>

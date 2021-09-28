@@ -1,11 +1,17 @@
+import "../../styles/CartItem.css";
+
 const CartItem = (props) => {
     return(
-        <li>
-            <div>{props.itemName}</div>
-            <div>x {props.quantity}</div>
-            <div>Price: {props.price} EUR</div>
-            <button onClick={props.onRemove}>Remove</button>
-            <button onClick={props.onAdd}>Add</button>
+        <li className="cart-item">
+            <h2>{props.itemName}</h2>
+            <div className="summary">
+                <span className="price">Price: {props.price} EUR</span>
+                <span className="quantity"> x {props.quantity}</span>
+            </div>
+            <div className="actions">
+                <button onClick={props.onRemove}>−</button>
+                <button onClick={props.onAdd}>+</button>
+            </div>
         </li>
     );
 }

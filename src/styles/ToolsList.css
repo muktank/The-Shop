@@ -1,0 +1,18 @@
+.tools {
+    margin-left: 10%;
+    margin-right: 10%;
+    border-style: none;
+    padding: 2rem;
+}
+
+.tools h2 {
+    margin-top: 3rem;
+    margin-bottom: 0rem;
+    text-align: center;
+}
+
+.tools ul {
+    max-width: 100rem;
+    width: 100%;
+    padding: 2rem;
+  }

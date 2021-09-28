@@ -1,0 +1,18 @@
+.tool {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    margin: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .tool h3 {
+    margin: 0 0 0.25rem 0;
+  }
+  
+  .price {
+    font-weight: bold;
+    color: #32690d;
+    font-size: 1.25rem;
+  }

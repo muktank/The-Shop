@@ -3,6 +3,7 @@ import { useContext } from "react";
 import CartItem from "./CartItem";
 import Modal from "../Generic/Modal";
 import CartContext from "../../store/cartCtx";
+import "../../styles/Cart.css";
 
 const Cart = (props) => {
     const cartCtx = useContext(CartContext);
@@ -27,7 +28,7 @@ const Cart = (props) => {
 
     const items = cartCtx.items.map((item) => (
         <CartItem 
-        key= {item.id} 
+        key= {item.id}
         itemName={item.title} 
         price={item.price} 
         quantity={item.quantity} 
@@ -38,10 +39,12 @@ const Cart = (props) => {
 
     return (
         <Modal onHideCart={props.onHideCart}>
-            <ul>{items}</ul>
-            <div>Cart Total : {cartCtx.totalPrice} EUR</div>
-            <button onClick={props.onHideCart}>Close</button>
-            {!isEmpty && <button onClick={onCheckout}>Checkout</button>}
+            <ul className="cart-items">{items}</ul>
+            <div className="total">Cart Total : {cartCtx.totalPrice} EUR</div>
+            <div className="actions">
+                <button className="button--alt" onClick={props.onHideCart}>Close</button>
+                {!isEmpty && <button className="button" onClick={onCheckout}>Checkout</button>}
+            </div>
         </Modal>
     );
 };

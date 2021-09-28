@@ -2,6 +2,7 @@ import { useContext } from "react";
 
 import AddTools from "./AddTools";
 import CartContext from "../../store/cartCtx";
+import "../../styles/Tools.css";
 
 const Tools = (props) => {
     const cartCtx = useContext(CartContext);
@@ -18,9 +19,9 @@ const Tools = (props) => {
     };
 
     return (
-        <li>
+        <li className="tool">
             <div><h3>{props.title}</h3></div>
-            <div>{props.price} EUR </div>
+            <div className="price">{props.price} EUR </div>
             <div>
                 <AddTools addToCart={onAddToCart} inputId={props.id}/>
             </div>

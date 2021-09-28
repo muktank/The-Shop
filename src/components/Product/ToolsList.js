@@ -1,6 +1,5 @@
-import { Fragment } from "react";
-
 import Tools from "./Tools";
+import "../../styles/ToolsList.css";
 
 const DUMMY_TOOLS = [
     {
@@ -46,12 +45,12 @@ const ToolsList = () => {
     ));
 
     return (
-        <Fragment>
+        <section className="tools">
             <h2>Pick Your Tools!</h2>
             <ul>
                 {tools}
             </ul>
-        </Fragment>
+        </section>
     );
 }
 
